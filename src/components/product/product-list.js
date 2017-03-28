@@ -1,18 +1,15 @@
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-    data() {
-            return {
-                products: [{
-                    title: 'iphone6',
-                    price: '5888'
-                }, {
-                    title: 'iphone7',
-                    price: '6288'
-                }]
-            }
-        },
-        methods: {
-            addToCart: function(p) {
-                console.log(p);
-            }
-        }
+    computed: mapGetters({
+        // 对应products.js的getters
+        products: 'allProducts'
+    }),
+    methods: mapActions([
+        'addToCart'
+    ]),
+    created() {
+        // 对应product.js的actions
+        this.$store.dispatch('getAllProducts')
+    }
 }

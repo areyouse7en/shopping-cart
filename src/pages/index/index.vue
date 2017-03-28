@@ -1,7 +1,9 @@
 <template lang="pug">
 .index
-    p this is index
+    p 购物车页面
     product-list
+    hr
+    cart
 </template>
 
 <script src="./index.js"></script>

@@ -9,8 +9,15 @@ const _products = [
 ]
 
 export default {
+    // 获取产品列表
     getProducts(cb) {
-        // 模拟ajax
-        setTimeout(() => cb(_products), 1000)
-    }
+            // 模拟ajax
+            setTimeout(() => cb(_products), 1000)
+        },
+        // 结算产品
+        buyProducts(products, cb, errorCb) {
+            setTimeout(() => {
+                Math.random() > 0.5 ? cb() : errorCb()
+            }, 1000)
+        }
 }
